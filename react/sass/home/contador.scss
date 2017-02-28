@@ -1,0 +1,45 @@
+.contador {
+	width: 100%;
+	min-height: 150px;
+	height: 150px;
+
+	.titulo {
+		width: 100%;
+		padding: 0;
+		h6 {
+			display: block;
+			font-weight: bold;
+			margin: 10px;
+			color: gray;
+		}
+	}
+
+	.texto {
+		width:100%;
+		padding: 0;
+		.numero {
+			font-size: 4rem;
+			text-align: right;
+			padding-left: 13px;
+			padding-top: 20px;
+			height: 85px;
+			color: #00BDD4;
+			font-weight: bold;
+		}
+		.label {
+			font-size: 1.2rem;
+			font-weight: bold;
+			height: 85px;
+			padding-top: 34px;
+			padding-left: 12px;
+		}
+	}
+
+	.acciones {
+		color: silver;
+		width: 100%;
+		padding: 0;
+		font-size: 0.9rem;
+		padding: 0px 0px 30px 35px;
+	}
+}

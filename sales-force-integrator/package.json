@@ -1,0 +1,31 @@
+{
+  "name": "laureles-salesforce",
+  "version": "1.0.0",
+  "description": "Integrador de colaboradores con laureles",
+  "main": "indejx",
+  "scripts": {
+    "start": "nodemon index.js | node_modules/bunyan/bin/bunyan -o short",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@54.211.243.152:proyectos-internos/laureles.git"
+  },
+  "keywords": [
+    "salesforce",
+    "nodejs"
+  ],
+  "author": "Interware",
+  "license": "Unlicense",
+  "dependencies": {
+    "axios": "0.15.3",
+    "bunyan": "1.8.5",
+    "lodash": "4.17.2",
+    "logstash": "1.0.17",
+    "mongoose": "4.7.1",
+    "qs": "6.3.0"
+  },
+  "devDependencies": {
+    "eslint": "3.11.1"
+  }
+}

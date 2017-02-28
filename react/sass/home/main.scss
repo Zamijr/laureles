@@ -1,0 +1,9 @@
+@import '../mdl/variables';
+
+section.home {
+	@import './contador.scss';
+	@import './ultimosEntregados.scss';
+	@import './home/layout.scss';
+}
+
+

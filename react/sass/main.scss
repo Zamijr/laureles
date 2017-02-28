@@ -1,0 +1,306 @@
+@import './mdl/material-design-lite.scss';
+@import './mdl/variables';
+@import './home/main.scss';
+@import './entrega-laurel/main.scss';
+@import './recibo-laurel/main.scss';
+@import './canje-laurel/main.scss';
+@import './asignar-laureles/main.scss';
+@import './validacion-laureles/main.scss';
+
+* {
+	box-sizing: border-box;
+}
+
+.spinner-screen {
+	width:100%;
+	height:100%;
+	position: absolute;
+	background-color: rgba(0,0,0,0.6);
+	z-index:10000;
+	.spinner {
+		position: absolute;
+		top: calc( 50% - 23px);
+		left: calc( 50% - 23px);
+	}
+}
+.mdl-spinner {
+	width: 45px !important;
+    height: 45px !important;
+}
+
+.tabla { width:100% }
+
+#modalDialog {
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+	background-color: rgba(0, 0, 0, 0.6);
+	position: absolute;
+	top: 0;
+	left: 0;
+	.content {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		background-color: unquote("rgb(#{$color-primary-contrast})");
+		.title {
+			background-color: unquote("rgb(#{$color-primary})");
+			display: table;
+			width: 100%;
+			height: 35px;
+			color: unquote("rgb(#{$color-primary-contrast})");
+			padding: 0px 10px 0px 25px;
+			font-size: 1.5rem;
+			span {
+				display: table-cell !important;
+				vertical-align: middle !important;
+			}
+			button {
+				display: table-cell !important;
+				vertical-align: middle !important;
+				float: right;
+			}
+		}
+		.body{
+			width: 100%;
+			min-height: 200px;
+			div {
+				width: 100%;
+			}
+			.texto {
+				margin: 30px 25px 15px 25px;;
+				font-size: 2rem;
+				color: gray;
+			}
+
+			.botones {
+				height: 40px;
+				button {
+					margin: 0 10px 0 10px !important;
+					float: right;
+				}
+				position: fixed;
+				bottom: 0;
+			}
+		}
+	}
+}
+/*Header*/
+@media screen and (max-width: 1024px){
+.mdl-layout__header {
+    display: flex !important;
+}
+}
+@media screen and (min-width: 480px) {
+    .mdl-layout__drawer-button {
+        visibility: hidden !important;
+    }
+}
+header {
+    .cajaIconosHeader{
+        margin:auto;
+		padding: 3px 12px 8px;
+		color: unquote("#{$color-white})");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-position-x: center;
+		background-position-y: center;
+    }
+    .reloj{
+		@extend .cajaIconosHeader;
+		background-image: url('./images/reloj.png');
+	}
+    .buscar{
+		@extend .cajaIconosHeader;
+		background-image: url('./images/buscar.png');
+	}
+
+	.campana{
+		@extend .cajaIconosHeader;
+		background-image: url('./images/campana.png');
+	}
+}
+.entregaLauLogo{
+		margin:auto;
+		padding: 80px 120px;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-position-x: center;
+		background-position-y: center;
+		background-image: url('./images/logoLaureles.png');
+	}
+	.contLogoEntrega{
+		text-align: center; 
+	}
+	.contadoresCajaImg{ 
+		position: absolute;
+		right: -70px;
+		top: 10px;
+		margin:auto;
+		padding: 25px 25px 20px;
+		color: unquote("rgba(#{$color-white}, 0.90)");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-position-x: center;
+		background-position-y: center;
+	}
+	.porEntregarImg{
+		@extend .contadoresCajaImg ;
+		background-image: url('./images/porEntregar.png');
+	}
+
+	.imagenContaEntregar{
+		@extend .contadoresCajaImg ;
+		background-image: url('./images/porEntregar.png');
+	}
+	.imagenContaCanjear{
+		@extend .contadoresCajaImg ;
+		background-image: url('./images/canjear.png');
+	}
+	.imagenContaRecibidos{
+		@extend .contadoresCajaImg ;
+		background-image: url('./images/recibidos.png');
+	}
+	.imagenContaEntregados{
+		@extend .contadoresCajaImg ;
+		padding: 25px 20px 20px;
+		background-image: url('./images/entregados.png');
+	}
+
+	.cajaTi{
+		position: relative;
+		margin: 15px 0px 0px 35px;
+	}
+/*Fin Header*/
+
+/*Menu Izquierdo*/
+@media screen and (max-width: 479px) {
+    .menuIzquierdo {
+        display: none !important;
+    }
+}
+.menuIzquierdo{
+	box-shadow:10px 0 5px -5px #ccc;
+	padding-bottom:5px;
+	position:relative;
+	width:50px;
+	height:600px;
+	background-color:#FAFAFA;
+	float:left;
+	&:hover{
+		cursor:pointer;
+		width: 200px;
+		.iconosMenuIzq{
+			display:none;
+		}
+		.menu{
+			display:block;
+		}
+
+
+	}
+	.cajaIcono{
+		text-align:center;
+		margin-bottom: 25px !important;
+		a{
+		margin:auto;
+		padding: 1px 8px 1px;
+		color: unquote("#{$color-white})");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-position-x: center;
+		background-position-y: center;
+		
+		}
+		.laurel {
+			background-image: url('./images/laurel.png');
+		}
+
+	    .canjear {
+			background-image: url('./images/misLaurles.png');
+		}
+		.ribbon {
+			background-image: url('./images/ribbon.png');
+		}
+		.valoresIW {
+			background-image: url('./images/valoresIW.png');
+		}
+		.estadisticas {
+			background-image: url('./images/estadisticas.png');
+		}
+		.admin {
+			background-image: url('./images/admin.png');
+		}
+	}
+	.laurel {
+		background-image: url('./images/laurel.png');
+	}
+	.menu {
+	position:absolute;
+	top:0px;
+	left:0;
+	display:none;
+	width: 100%;
+	.listaMenu li span{
+		font-size:14px !important;
+		color: gray !important;
+		font-weight: bold !important;
+	}
+	
+	div {
+		width: 100%;
+	}
+	.usuario {
+		height: 110px;
+		color: unquote("rgba(#{$color-white}, 0.90)");
+		background-color: unquote("rgba(#{$palette-grey-500}, 0.40)");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-position-x: center;
+		background-position-y: center;
+		background-image: url('./images/static1.squarespace.png');
+		.foto {
+			img {
+				width: 50px;
+				height: 50px;
+				margin-top: 10px;
+				margin-bottom: 5px;
+				margin-left: 15px;
+				border-radius: 50%;
+			}
+		}
+	}
+	.nombre {
+		margin-top: 0px;
+		padding-left: 16px;
+		font-size: 0.9rem;
+		font-weight: bold;
+	}
+	.email {
+		margin-top: -5px;
+		padding-left: 17px;
+		padding-bottom: 0px;
+		font-size: 0.8rem;
+		font-weight: 100;
+	}
+	}
+}
+/*Fin Clases Menu Izquierdo*/
+
+/*Menu Derecho Ultimos Laureles*/
+#menuUltimosLaureles{
+	padding-left:10px;
+	position:relative;
+	background-color:#E0DFDF;
+	box-shadow: -5px 0 5px -5px #333;
+
+	.imagenGoogle{
+	width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    border-radius: 50%;
+	}
+}

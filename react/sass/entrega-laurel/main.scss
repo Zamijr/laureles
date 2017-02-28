@@ -1,0 +1,241 @@
+.mdl-stepper--horizontal {
+	max-width: initial ;
+	min-height: 600px;
+	overflow: auto;
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+.mdl-stepper--horizontal .mdl-stepper__steps:before {
+		height: 50px;
+        background-color: black;
+}
+.mdl-stepper__title{
+	color: white;
+	background-color: transparent;
+}
+.mdl-stepper__title-wrap {
+	background-color: transparent !important;
+}
+.mdl-stepper__steps .mdl-stepper__step{
+	margin-top: 0px !important;
+}
+
+.reglasPasos{
+	ul {
+		list-style: none;
+		line-height: 20px;
+		li::before {
+		content: "•"; color: #00BDD4;
+		font-size: 30px;
+		display: inline-block; width: 1em;
+  		margin-left: -1em;
+		margin-top: 10px;
+		}
+		li div{
+			margin-top: -28px;
+		}
+	} 
+}
+.buscador {
+	&__tipo-busqueda {
+		text-align: center;
+		label:first-child {
+			margin-right: 7%;
+		}
+	}
+	&__form {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		&__input {
+			margin-right: 10px;
+		}
+	}
+}
+
+.valores {
+	display: flex;
+	flex-wrap: wrap;
+	&__tarjeta {
+		display: flex;
+		align-items: stretch;
+		flex-flow: column;
+		justify-content: flex-end;
+		width: 220px;
+		height: 230px;
+		box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+		margin: 10px 30px 0 0;
+		position:relative;
+		&.selected, &.selected:hover {
+			border: 2px solid unquote("rgb(#{$color-accent})");
+		}
+		&:hover &__nombre {
+			//padding-bottom: 130px;
+			//height: 50%;
+		}
+		&:hover &__descripcion {
+			display: block;
+			padding-bottom: 130px;
+		}
+		&__nombre {
+			color: gray;
+			font-size:18px;
+			overflow: auto;
+			background-color: white !important;
+			border-bottom: silver 1px solid;
+			margin: 0;
+			padding: 10px 0 0 10px;
+			background-color: rgba(0,0,0,0.6);
+			transition: all 1s ease;
+			.okIconValores{
+				display: none;
+			}
+		}
+		&__descripcion {
+			display:none;
+			color: gray;
+			font-size:14px;
+			background-color: white !important;
+			margin: 0;
+			padding: 10px 0 0 10px;
+			background-color: rgba(0,0,0,0.6);
+			transition: all 1s ease;
+		}
+		&__info-btn {
+			margin:0;
+			border: 1px solid #aaa;
+			padding: 10px;
+			background: #fff;
+		}
+		&.selected &__nombre, &.selected &__info-btn {
+			padding: 10px 8px;
+			.okIconValores{
+				margin:auto;
+				padding: 5px 12px 20px;
+				color: unquote("#{$color-white})");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				background-position-x: center;
+				background-position-y: center;
+				background-image: url('./images/interface.png');
+				display: block;
+			}
+		}
+		&.selected:hover &__nombre {
+			padding-bottom: 0px;
+		}
+	}
+}
+
+.colaboradores {
+	display: flex;
+	flex-wrap: wrap;
+//	justify-content: space-around;
+//	justify-content: space-between;
+//	padding: 0 10px;
+	&__tarjeta {
+		margin: 10px;
+		padding: 15px;
+		width: 260px;
+		height: 100px;
+		display: flex;
+		align-items: stretch;
+		background-color: #fff;
+		border: 1px solid #888;
+		box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+		&.selected {
+			border: 2px solid unquote("rgb(#{$color-accent})");
+			padding: 14px;
+			box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+		}
+		&.selected:hover {
+			border: 2px solid unquote("rgb(#{$color-accent})");
+			padding: 14px;
+			box-shadow: 2px 5px 15px rgba(0,0,0,0.5);
+		}
+		&:hover, &:focus {
+			box-shadow: 2px 5px 15px rgba(0,0,0,0.5);
+		}
+		&__avatar {
+			order: 1;
+			border-radius: 50%;
+			overflow: hidden;
+			margin-right: 10px;
+			min-width: 65px;
+			height: 65px;
+			&__img {
+				background-color: #eee;
+				min-width: 65px;
+				height: 65px;
+			}
+		}
+		&__texto {
+			order: 2;
+			&__nombre {
+				margin: 0;
+				line-height: 1.4em;
+				margin-bottom: 5px;
+			}
+			&__puesto {
+				line-height: 1.2em;
+				font-size: 0.83em;
+				text-align: justify;
+				color: #888;
+			}
+		}
+	}
+}
+
+.motivos
+{
+	&__datos{
+		order: 1;
+		text-align: center;
+		&__foto{
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			background-color: #efefef;
+		}
+		&__nombre{
+			font-weight: bolder;
+			margin-bottom: 0;
+		}
+		&__puesto{
+			font-size: small;
+			color: #333;
+		}
+	}
+	&__preguntas{
+		order: 2;
+		&__p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.resumen__datos{
+	text-align: center;
+	&__foto{
+		width: 120px;
+		height: 120px;
+		border-radius: 50%;
+		background-color: #efefef;
+	}
+	&__nombre{
+		font-size: large;
+		font-weight: bolder;
+		margin: 0;
+	}
+	&__puesto{
+		font-size: small;
+		color: #333;
+	}
+}
+.contenido{
+	background-color:#F0EFEF;
+	height:100%;
+}

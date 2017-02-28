@@ -1,0 +1,248 @@
+{
+    "project": {},
+    "files": {
+        "modules/colaborador/schema.js": {
+            "name": "modules/colaborador/schema.js",
+            "modules": {
+                "Colaborador": 1
+            },
+            "classes": {
+                "ColaboradorSchema": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "modules/laurel/controller.js": {
+            "name": "modules/laurel/controller.js",
+            "modules": {
+                "Laurel": 1
+            },
+            "classes": {
+                "LaurelController": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "modules/laurel/schema.js": {
+            "name": "modules/laurel/schema.js",
+            "modules": {},
+            "classes": {
+                "LaurelSchema": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "modules/laurel/type.js": {
+            "name": "modules/laurel/type.js",
+            "modules": {},
+            "classes": {
+                "LaurelType": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "modules/laurel/utils.js": {
+            "name": "modules/laurel/utils.js",
+            "modules": {},
+            "classes": {},
+            "fors": {
+                "LaurelType": 1
+            },
+            "namespaces": {}
+        },
+        "modules/index.js": {
+            "name": "modules/index.js",
+            "modules": {},
+            "classes": {
+                "Schema": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "Colaborador": {
+            "name": "Colaborador",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "ColaboradorSchema": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "modules/colaborador/schema.js",
+            "line": 6
+        },
+        "Laurel": {
+            "name": "Laurel",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "LaurelController": 1,
+                "LaurelSchema": 1,
+                "LaurelType": 1,
+                "Schema": 1
+            },
+            "fors": {
+                "LaurelType": 1
+            },
+            "namespaces": {},
+            "tag": "module",
+            "file": "modules/index.js",
+            "line": 8
+        }
+    },
+    "classes": {
+        "ColaboradorSchema": {
+            "name": "ColaboradorSchema",
+            "shortname": "ColaboradorSchema",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Colaborador",
+            "namespace": "",
+            "file": "modules/colaborador/schema.js",
+            "line": 6,
+            "description": "El esquema de mongo para el colaborador"
+        },
+        "LaurelController": {
+            "name": "LaurelController",
+            "shortname": "LaurelController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Laurel",
+            "namespace": "",
+            "file": "modules/laurel/controller.js",
+            "line": 7,
+            "description": "El controlador de base de datos para mongoose del Laurel"
+        },
+        "LaurelSchema": {
+            "name": "LaurelSchema",
+            "shortname": "LaurelSchema",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Laurel",
+            "namespace": "",
+            "file": "modules/laurel/schema.js",
+            "line": 7,
+            "description": "El esquema de mongo para los laureles"
+        },
+        "LaurelType": {
+            "name": "LaurelType",
+            "shortname": "LaurelType",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Laurel",
+            "namespace": "",
+            "file": "modules/laurel/type.js",
+            "line": 8,
+            "description": "Contiene las operaciones de control del Laurel"
+        },
+        "Schema": {
+            "name": "Schema",
+            "shortname": "Schema",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Laurel",
+            "namespace": "",
+            "file": "modules/index.js",
+            "line": 8,
+            "description": "La definición del esquema de Graphql"
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "modules/laurel/controller.js",
+            "line": 177,
+            "description": "Busca todos los laureles por aprobar en mongo",
+            "itemtype": "method",
+            "name": "buscarLaurelesPorAprobar",
+            "return": {
+                "description": "La promesa de ejecucion, con el resultado de la busqueda",
+                "type": "Promise"
+            },
+            "class": "LaurelController",
+            "module": "Laurel"
+        },
+        {
+            "file": "modules/laurel/controller.js",
+            "line": 203,
+            "description": "Actualiza el estado de aprobado en mongo",
+            "itemtype": "method",
+            "name": "aprobaRechazarLaurel",
+            "params": [
+                {
+                    "name": "laureles",
+                    "description": "El laurel a actualizar",
+                    "type": "String"
+                },
+                {
+                    "name": "aprobadorechazado",
+                    "description": "La bandera para actualizar el laurel",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "La promesa de ejecucion, con el resultado de la actualizacion",
+                "type": "Promise"
+            },
+            "class": "LaurelController",
+            "module": "Laurel"
+        },
+        {
+            "file": "modules/laurel/type.js",
+            "line": 13,
+            "description": "Obtiene un laurel desde la base de datos por su Id.",
+            "itemtype": "method",
+            "name": "buscarLaurelPorId",
+            "static": 1,
+            "class": "LaurelType",
+            "module": "Laurel"
+        },
+        {
+            "file": "modules/laurel/type.js",
+            "line": 79,
+            "description": "Administra el proceso de busqueda de laureles por aprobar,\nde momento sirve como puente entre el controllador y el schema de Graphql",
+            "itemtype": "method",
+            "name": "buscarLaurelesPorAprobar",
+            "class": "LaurelType",
+            "module": "Laurel"
+        },
+        {
+            "file": "modules/laurel/utils.js",
+            "line": 5,
+            "description": "Coloca en IsoString las fechas del laurel, para poder transportar por http.",
+            "itemtype": "method",
+            "name": "cambiaFechasLaurel",
+            "class": "LaurelType",
+            "module": "Laurel"
+        },
+        {
+            "file": "modules/index.js",
+            "line": 76,
+            "description": "Las operaciones que ligan el esquema de Graphql con las operaciones.",
+            "itemtype": "property",
+            "name": "root",
+            "type": "{Object}",
+            "class": "Schema",
+            "module": "Laurel"
+        }
+    ],
+    "warnings": []
+}
